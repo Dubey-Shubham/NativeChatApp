@@ -1,10 +1,20 @@
-//import { MMKV } from "react-native-mmkv";
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 
-//export const storage = new MMKV()  //new object initialize krke export kr diya
+// export const saveItem = async (key, value) => {
+//   try {
+//     await AsyncStorage.setItem(key, value);
+//   } catch (e) {
+//     console.error('Failed to save item', e);
+//   }
+// };
 
-//as of 4 aug 2025 mmkv latest version not in sync with native so downgrade it to 2.12.2
+// export const getItem = async (key) => {
+//   try {
+//     const value = await AsyncStorage.getItem(key);
+//     return value;
+//   } catch (e) {
+//     console.error('Failed to fetch item', e);
+//   }
+// };
 
-// then run following command
-//  npm install 
-//  npx expo prebuild  to generate build packages
-//  npx run android to generate apk for android
+// just export these two one to get another to set in local storage

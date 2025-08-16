@@ -11,7 +11,7 @@ const login = () => {
 
     const [show, setShow] = useState(false);
     const [countryName, setcountryName] = useState("India");
-    const [countryCode, setCountryCode] = useState(+91);
+    const [countryCode, setCountryCode] = useState("+91");
 
     const handlenext = () => {
         router.push("/(auth)/verify_otp")
@@ -40,7 +40,7 @@ const login = () => {
                             <View style={styles.horizontal_line} />
                         </View>
                         <View style={{ gap: verticalScale(10), flex: 1 }}>
-                            <TextInput style={styles.input} placeholder='Enter Your Phone Number' />
+                            <TextInput style={styles.input} placeholder='Enter Your Phone Number' placeholderTextColor="black"  />
                             <View style={styles.horizontal_line} />
                         </View>
                     </View>
@@ -132,7 +132,8 @@ const styles = StyleSheet.create({
         paddingVertical: verticalScale(10)
     },
     input: {
-        fontSize: moderateScale(16)
+        fontSize: moderateScale(16),
+        color: "black"
     },
 })
 

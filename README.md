@@ -2,13 +2,13 @@
 
 ## SetUp and Installation
 
-1. 
+1. Installation
 - npx create-expo-app@latest
 - npm install --save react-native-size-matters (for text etc size responsiveness)
 - npm i react-native-country-codes-picker  (for country dropdown)
 - npm i react-native-otp-entry (for custom otp input component)
-- npm i react-native-mmkv  (fastest key value storage for react native)
-for mmkv there beed to be done a few things so see them go to utils.js in utils
+- npm i react-native-mmkv  (fastest key value storage for react native) (2.12.2 downgrade to this version for working)
+for mmkv there need to be done a few things so see them go to utils.js in utils
 2. Delete all the hooks, compo, script, app and non neccessary folders
 
 ## Setting Up folder Structure
@@ -37,5 +37,23 @@ for mmkv there beed to be done a few things so see them go to utils.js in utils
 1. create files for index, login, verify_otp, terms_agree
 2. in auth layout create stack for all files
 3. The screen has been made in the following order
-   => index => terms_agree => login
+   => index => terms_agree => login => verify_otp
+
+## Eas Build SetUp
+
+1. Expo Go
+- Expo Go downloads your app’s JavaScript bundle from your development server and runs it inside the Expo Go client.
+- Limited to Expo Go’s built-in native modules (you can’t use custom native code or some libraries that need native linking).
+
+2. EAS Build
+- This is for when you want your own standalone app (APK or AAB for Android, IPA for iOS) — for distribution, store submission, or using native code that Expo Go doesn’t support.
+- Works with native modules not included in Expo Go.
+
+3. SUMMARY
+- Expo has precompiled module so if u add new native module then it wont be able to compile it because this module has file of diffrent language or dependency
+- Eas builds app on its server where it has access to compilers which can compile even native modules on it server
+- so install setup native module, make changes, build it, install and now all changes will show even realtime changes
+( eas build --platform android --profile development ) command for build
+
+
 

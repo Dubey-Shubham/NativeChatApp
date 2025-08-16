@@ -1,17 +1,19 @@
-import { AntDesign } from '@expo/vector-icons'
-import { useState } from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import { OtpInput } from "react-native-otp-entry"
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
-import ButtonComp from '../../components/atoms/ButtonComp'
-// import { storage } from '../../utils/utils'
+import { AntDesign } from '@expo/vector-icons';
+import { useState } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { OtpInput } from "react-native-otp-entry";
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import ButtonComp from '../../components/atoms/ButtonComp';
+// import { getItem, saveItem } from '../utils/storage';
 
 const verify_otp = () => {
     const [otp, setOtp] = useState()
 
     const onPress = () => {
         console.log(otp)
-        // storage.set("access_taken", "access")   //setting the localstorage via mmkv 
+        // saveItem('access_token', 'access');   //setting the localstorage via mmkv 
+        // const token = getItem('access_token');
+        // console.log("access_token after set:", token)
     }
 
     return (
