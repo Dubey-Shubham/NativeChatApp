@@ -4,16 +4,16 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { OtpInput } from "react-native-otp-entry";
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import ButtonComp from '../../components/atoms/ButtonComp';
-// import { getItem, saveItem } from '../utils/storage';
+import { getItem, saveItem } from '../../utils/utils';
 
 const verify_otp = () => {
     const [otp, setOtp] = useState()
 
-    const onPress = () => {
+    const onPress = async () => {
         console.log(otp)
-        // saveItem('access_token', 'access');   //setting the localstorage via mmkv 
-        // const token = getItem('access_token');
-        // console.log("access_token after set:", token)
+        await saveItem('access_token', 'access');   //setting the localstorage via asyncstorage
+        const token = await getItem('access_token');
+        console.log("access_token after set:", token)
     }
 
     return (
