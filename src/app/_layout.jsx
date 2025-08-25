@@ -1,22 +1,23 @@
 import { Redirect, Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
-// import { storage } from '../utils/utils';
+import { getItem } from '../utils/utils';
 
 SplashScreen.preventAutoHideAsync(); // will not let screen hide
 
 const RootLayout = () => {
 
-  const [isLogin, setIsLogin] = useState(false)
-  // const access_token = storage.getString("access_taken")
+  const [isLogin, setIsLogin] = useState(true)
+  const token = getItem('access_token');
+  // jupl
 
   useEffect(() => {
     SplashScreen.hideAsync();
   }, [])
 
-  // useEffect(() => {
-  //   console.log("access_token", access_token)
-  // }, [access_token])
+  useEffect(() => {
+    console.log("access_token", token)
+  }, [token])
 
   return (
     <>
